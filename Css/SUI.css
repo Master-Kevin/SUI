@@ -1,0 +1,324 @@
+/* 基础样式 */
+* { margin: 0; padding: 0; outline: none !important; font-weight: 300; font-family: 'microsoft yahei','微软雅黑';  -webkit-overflow-scrolling: touch; font-size: 10pt; box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0) !important;}
+body { background-color: #f8f8f8; -webkit-tap-highlight-color:rgba(0,0,0,0) !important; }
+button { border: none; }
+/* div { overflow: auto; } */
+.goto { cursor: pointer;  }
+/* 底部导航UI */
+nav.suiNav { position: fixed; bottom: 0; left: 0; border-top: 1px solid #eee; width: 100%; height: 50px; background-color: #fafafa; z-index: 1; }
+nav.suiNav ul { width: 100%; }
+nav.suiNav ul li { width: 20%; float: left; list-style: none; text-align: center; padding: 1px 0; cursor: pointer; }
+nav.suiNav ul li i { display: block; font-size: 20pt; }
+nav.suiNav ul li a { text-decoration: none; color: #000; font-size: 9pt; font-weight: 400; display: block; }
+/* 通用UI样式 */
+.suiOp1 { opacity: 0.1; }
+.suiOp2 { opacity: 0.2; }
+.suiOp3 { opacity: 0.3; }
+.suiOp4 { opacity: 0.4; }
+.suiOp5 { opacity: 0.5; }
+.suiOp6 { opacity: 0.6; }
+.suiOp7 { opacity: 0.7; }
+.suiOp8 { opacity: 0.8; }
+.suiOp9 { opacity: 0.9; }
+/* 头部标题UI样式 */
+dl.suiHead { width: 100%; height: 45px; line-height: 45px; }
+dl.suiHead dt { float: left; font-weight: 400; font-size: 14pt; }
+dl.suiHead dd { float: right;  }
+/* 通用间距 */
+.suiXPd10 { padding: 0 10px; }
+.suiXPd15 { padding: 0 15px; }
+.suiXPd20 { padding: 0 20px; }
+.suiXPd25 { padding: 0 25px; }
+.suiXPd30 { padding: 0 30px; }
+.suiXPd35 { padding: 0 35px; }
+.suiXPd40 { padding: 0 40px; }
+.suiXPd45 { padding: 0 45px; }
+.suiXPd50 { padding: 0 50px; }
+.suiXPd55 { padding: 0 55px; }
+.suiXPd60 { padding: 0 60px; }
+.suiYPd10 { padding: 10px 0; }
+.suiYPd15 { padding: 15px 0; }
+.suiYPd20 { padding: 20px 0; }
+.suiYPd25 { padding: 25px 0; }
+.suiYPd30 { padding: 30px 0; }
+.suiYPd35 { padding: 35px 0; }
+.suiYPd40 { padding: 40px 0; }
+.suiYPd45 { padding: 45px 0; }
+.suiYPd50 { padding: 50px 0; }
+.suiYPd55 { padding: 55px 0; }
+.suiYPd60 { padding: 60px 0; }
+/* 通用颜色样式 */
+.suiBgW { background-color: #fff; }
+
+/* 其他类型通用性样式 */
+.suiFL { float: left; }
+.suiFR { float: right; }
+.suiTextCenter { text-align: center; }
+.suiDisn { display: none !important; }
+.suiTop10 { margin-top: 10px; }
+
+/* 
+ *商品展示样式
+ */
+.suiTPrdBox { width: 100%; }
+.suiTPrdBox .suiPrd { width: 100%; margin-bottom: 3px; width: 100%; max-height: 350px; position: relative; overflow: hidden; }
+.suiTPrdBox .suiPrd img { width: 100%; float: left; }
+.suiTPrdBox .suiPrd .suiCont { position: absolute; bottom: 0; left: 0; height: 60px; background-image: linear-gradient(to top,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)); width: 100%; padding: 0 10px; }
+.suiTPrdBox .suiPrd .suiCont p { color: #fff; }
+.suiTPrdBox .suiPrd .suiCont p:nth-of-type(1) { line-height: 30px; font-size: 1.2pc; font-weight: 400; }
+.suiTPrdBox .suiPrd .suiCont p:nth-of-type(2) { font-size: 10pt; }
+.suiTPrdBox .suiPrd .suiCont p:nth-of-type(2) span { font-size: 1.2pc; line-height: 80%; }
+.suiTPrdBoxWaterFall { width: 100%; overflow: auto; }
+.suiTPrdBoxWaterFall>div { width: 50%; float: left; padding-right: 3px; }
+.suiTPrdBoxWaterFall>div .suiPrd { width: 100%; margin-bottom: 3px; width: 100%; position: relative; overflow: hidden; }
+.suiTPrdBoxWaterFall>div .suiPrd img { width: 100%; float: left; }
+.suiTPrdBoxWaterFall>div .suiPrd .suiCont { position: absolute; bottom: 0; left: 0; height: 40px; background-image: linear-gradient(to top,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0)); width: 100%; padding: 0 4px; }
+.suiTPrdBoxWaterFall>div .suiPrd .suiCont p { color: #fff; }
+.suiTPrdBoxWaterFall>div .suiPrd .suiCont p:nth-of-type(1) { line-height: 18px; font-size: 10pt; font-weight: 400; }
+.suiTPrdBoxWaterFall>div .suiPrd .suiCont p:nth-of-type(2) { font-size: 7pt; }
+.suiTPrdBoxWaterFall>div .suiPrd .suiCont p:nth-of-type(2) span { font-size: 9pt; line-height: 120%; }
+/* 通用行样式 */
+.suiLineBox { width: 100%; padding: 0 0 0 15px; background-color: #fff; margin-top: 10px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.suiLineBox.bottom10 { margin-bottom: 10px; }
+.suiLineBox.notop { margin-top: 0; }
+.suiLineBox dl { height: 40px; line-height: 40px; border-bottom: 1px solid #f3f3f3; padding-right: 15px; }
+.suiLineBox dl>img { height: 23px; width: 23px; float: left; margin: 8.5px 0; margin-right: 8px; }
+.suiLineBox dl:last-child { border-bottom: none; }
+.suiLineBox dl dt { font-size: 11pt; float: left; }
+.suiLineBox.strong dl dt { font-size: 11pt; font-weight: 400; float: left; }
+.suiLineBox dl dd { float: right; }
+.suiLineBox dl dd img { height: 23px; width: 23px; float: left; margin: 8.5px 0; }
+.suiLineBox dl dd.right { background-image: url('../icon/left.png'); background-repeat: no-repeat; background-position: right center; background-size: 20px; width: 30px; height: 100%; }
+.suiLineBox dl dd.chose { float: right; background-image: url(../icon/chose.png); background-repeat: no-repeat; background-size: 20px; width: 20px; height: 100%; background-position: center; }
+.suiLineBox dl dd.nochose { float: right; background-image: url(../icon/nochose.png); background-repeat: no-repeat; background-size: 20px; width: 20px; height: 100%; background-position: center; }
+.suiLineBox dl dd.pay { color: #d22; font-weight: 400; }
+.suiLineBox dl dd.recharge { color: #067600; font-weight: 400; }
+.suiLineBox dl dd.rollout { color: #d22; font-weight: 400; }
+/* 通用输入行组件 */
+div.suiLineInput { background-color: #fff; width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+div.suiLineInput.noTBorder { border-top: none; }
+div.suiLineInput dl { overflow: auto; border-top: 1px solid #f3f3f3; padding: 0 15px; line-height: 39px; height: 40px; }
+div.suiLineInput dl.text { overflow: auto; border-top: 1px solid #f3f3f3; padding: 0 15px; line-height: 18px; height: auto; }
+div.suiLineInput dl:first-child { border-top: none; }
+div.suiLineInput dl dt { float: left; width: 25%; }
+div.suiLineInput.strong dl dt { font-weight: 400; font-size: 11pt; }
+div.suiLineInput.strong dl dd input { font-size: 11pt; }
+div.suiLineInput.strong dl dd { font-size: 11pt; }
+div.suiLineInput.valueStrong dl dd { font-size: 11pt; }
+div.suiLineInput dl dd { float: right; text-align: right; width: 75%; }
+div.suiLineInput dl.text dt { display: none; }
+div.suiLineInput dl.text dd { width: 100%; overflow: hidden; }
+div.suiLineInput dl.text dd textarea { width: 100%; border:none; font-size: 12pt; resize: none; height: 200px; box-sizing: border-box; overflow: scroll; padding: 10px 0; }
+div.suiLineInput dl dd input { text-align: right; border: none; width: 100%; }
+div.suiLineInput dl.uploadImg { overflow: auto; border-top: 1px solid #f3f3f3; padding: 0 15px; line-height: 79px; height: 80px; }
+div.suiLineInput dl.uploadImg dd { float: right; width: 70px; height: 70px; margin: 4px 0; background-image: url('../image/upload.png'); background-repeat: no-repeat; background-size: 100%; background-position: center; }
+div.suiLineInput dl.uploadImg dd input { text-align: right; float: right; border: none; width: 100%; width: 70px; height: 70px; opacity: 0; }
+/* 通用标签样式 */
+p.suiTag { line-height: 250%; padding: 0 15px; color: #666; font-weight: 400; }
+p.suiTag.noStrong { font-weight: 300; color: #000; }
+p.suiTag.top10 { margin-top: 10px; }
+/* 信息展示列表 */
+.suiInfoList { width: 100%; padding: 5px 15px; background-color: #fff; overflow: auto; border-top: 1px solid #eee; border-bottom: 1px solid #eee; } 
+.suiInfoList p { overflow: auto; line-height: 280%; border-bottom: 1px solid #f0f0f0; }
+.suiInfoList p:last-child { border: none; }
+.suiInfoList p span:nth-of-type(1) { display: block; width: 20%; float: left; font-size: 10pt; color: #888; }
+.suiInfoList p span:nth-of-type(2) { font-size: 11pt; /* font-weight: 400; */ }
+.suiInfoList.noLine p { border: none; } 
+/* 最基础的描述样式 */
+p.suiBasicText { padding: 10px 15px; background-color: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; line-height: 150%; letter-spacing: 0.5px; }
+/* 简单列表样式：文章、新闻 */
+.suiArticleList { background-color: #fff; padding: 15px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.suiArticleList dl { width: 100%; overflow: auto; margin-top: 10px; }
+.suiArticleList dl:first-child { margin-top: 0; }
+.suiArticleList.square dl dt { width: 20vw; height: 20vw; margin-right: 10px; float: left; }
+.suiArticleList.square dl dd:nth-of-type(1) { font-weight: 400; line-height: 28px; font-size: 1.1pc; height: 28px; overflow: hidden; }
+.suiArticleList.square dl dd:nth-of-type(2) { font-size: 10pt; color: #888; line-height: 20px; height: 40px; overflow: hidden; }
+.suiArticleList.oblong dl dt { width: 25vw; height: 13vw; margin-right: 10px; float: left; }
+.suiArticleList.oblong dl dd:nth-of-type(1) { font-weight: 400; line-height: 26px; font-size: 1.1pc; height: 26px; overflow: hidden; }
+.suiArticleList.oblong dl dd:nth-of-type(2) { font-size: 10pt; color: #888; line-height: 20px; height: 20px; overflow: hidden; }
+/* 背景图展示通用样式 */
+.suiBgImg { background-size: cover; background-repeat: no-repeat; background-position: center; display: block; }
+/* 按钮通用样式 */
+.suiInBotButt { width: 100%; height: 50px; position: fixed; bottom: 0; left: 0; background-color: #f60; text-align: center; line-height: 50px; color: #fff; font-size: 1.1pc; font-weight: 400; }
+/* 用户列表样式 */
+.suiUserBox { width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee; background-color: #fff; padding-left: 10px; }
+.suiUserBox dl { border-top: 1px solid #f3f3f3; padding: 8px 0; padding-right: 10px; overflow: auto; position: relative; }
+.suiUserBox dl:first-child { border:none; }
+.suiUserBox dl dt { width: 40px; height: 40px; border-radius: 50%; float: left; margin-right: 10px; }
+.suiUserBox dl dd { font-weight: 400; width: 80%; }
+.suiUserBox dl dd:nth-of-type(1) { font-size: 11pt; }
+.suiUserBox dl dd:nth-of-type(2) { font-size: 9pt;  overflow: hidden; line-height: 20px; height: 20px; color: #888; }
+.suiUserBox dl span { display: block; position: absolute; right: 10px; top: 25%; border: 1px solid #aaa; color: #aaa; padding: 3px 13px; border-radius: 5px; }
+.suiUserBox dl span.over { background-color: #ddd; border: 1px solid #ddd; color: #888; }
+/* 弹窗 */
+.suiUiBox { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,0.2); z-index: 999; }
+.suiUiBox.show { animation: UiBgShow 0.3s both; }
+.suiUiBox.hide { animation: UiBgHide 0.3s both; }
+.suiUiBox .alert { width: 70%; background-color: rgba(255,255,255,0.98); border-radius: 10px; margin: 0 auto; margin-top: 30vh; overflow: hidden; }
+.suiUiBox.show .alert { animation: AlertShow 0.3s; }
+.suiUiBox .alert dl { text-align: center; padding: 12px 0; }
+.suiUiBox .alert dl dt { font-weight: 500; font-size: 1.2pc; line-height: 150%; margin-bottom: 5px; }
+.suiUiBox .alert dl dd { font-weight: 400; font-size: 1pc; color: #333; padding: 1px 15px; }
+.suiUiBox .alert .butt { text-align: center; border: none; border-top: 1px solid #ddd; width: 100%; border-radius: 0; background-color: rgba(255,255,255,0.98); color: #007aff; line-height: 40px; font-weight: 600; font-size: 1.2pc; }
+
+.suiUiBox { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: rgba(0,0,0,0.2); z-index: 999; }
+.suiUiBox.show { animation: UiBgShow 0.3s both; }
+.suiUiBox.hide { animation: UiBgHide 0.3s both; }
+.suiUiBox .confirm { width: 70%; background-color: rgba(255,255,255,0.98); border-radius: 10px; margin: 0 auto; margin-top: 30vh; overflow: hidden; }
+.suiUiBox.show .confirm { animation: AlertShow 0.3s; }
+.suiUiBox .confirm dl { text-align: center; padding: 12px 0; }
+.suiUiBox .confirm dl dt { font-weight: 500; font-size: 1.2pc; line-height: 150%; margin-bottom: 5px; }
+.suiUiBox .confirm dl dd { font-weight: 400; font-size: 1pc; color: #333; padding: 1px 15px; }
+.suiUiBox .confirm .butt { text-align: center; border: none; border-top: 1px solid #ddd; width: 50%; float: left; border-radius: 0; background-color: rgba(255,255,255,0.98); color: #007aff; line-height: 40px; font-weight: 600; font-size: 1.2pc; }
+.suiUiBox .confirm .butt { border-right: 1px solid #ddd; }
+.suiUiBox .confirm .butt:nth-of-type(2) { border-right: none; }
+
+@keyframes UiBgShow {
+	from {
+		z-index: -9;
+		background-color: rgba(0,0,0,0);
+	}
+	to {
+		z-index: 999;
+		background-color: rgba(0,0,0,0.2);
+	}
+}
+
+@keyframes UiBgHide {
+	from {
+		z-index: 999;
+		opacity: 1;
+	}
+	to {
+		z-index: -9;
+		opacity: 0;
+	}
+}
+
+@keyframes AlertShow {
+	from {
+		transform: scale(1.3);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.suiUiBox .sheet { width: 100%; background-color: #f8f8f8; position: fixed; bottom: 0; left: 0; border-top: 1px solid #eee; opacity: 0.98; }
+.suiUiBox.show .sheet { animation: sheetShow 0.35s 0s both; }
+.suiUiBox .sheet ul { width: 100%; background-color: #fff; }
+.suiUiBox .sheet ul li { width: 100%; text-align: center; line-height: 40px; font-size: 1pc; border-bottom: 1px solid #f3f3f3; }
+.suiUiBox .sheet span { width: 100%; height: 40px; background-color: #fff; display: block; text-align: center; line-height: 40px; font-size: 1.1pc; color: #d22; font-weight: 400; margin-top: 10px; border-top: 1px solid #eee; }
+
+@keyframes sheetShow {
+	from{
+		transform: translateY(100%);
+	}
+	to{
+		transform: translateY(0%);
+	}
+}
+
+/* 通用说明样式 */
+.suiExplain { padding: 10px 15px; text-align: center; font-size: 8pt; color: #666; }
+
+/* 提示通用样式 */
+.suiToast { display: block; position: fixed; width: 30vw; padding: 7px 0; border-radius: 18px; font-size: 11pt; text-align: center; z-index: 999; background-color: rgba(0,0,0,0.8); bottom: 8vh; color: #fff; left: 35vw; }
+.suiToast.hide { animation: toastHide 0.5s both; }
+
+@keyframes toastHide {
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+/* 文章列表样式 */
+.suiArticleBox { width: 100%; background-color: #fff; }
+.suiArticleBox dl { width: 100%; }
+.suiArticleBox dl dt { width: 100%; height: 55vw; }
+.suiArticleBox dl dd { width: 100%; padding: 8px 15px; padding-bottom: 14px; }
+.suiArticleBox dl dd p:nth-of-type(1) { font-weight: 400; font-size: 1pc; margin-bottom: 5px;}
+.suiArticleBox dl dd p:nth-of-type(2) { font-size: 10pt; color: #666; }
+/* Not Found Background */
+.suiNotfound { width: 50vw; margin: 0 auto; margin-top: 35vw; }
+.suiNotfound dt { width: 30vw; height: 30vw; margin: 0 auto; }
+.suiNotfound dd { font-size: 1.3pc; font-weight: 400; text-align: center; color: #888; margin-top: 15px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
