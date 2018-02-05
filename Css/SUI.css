@@ -94,6 +94,44 @@ dl.suiHead dd { float: right;  }
 .suiLineBox dl dd.pay { color: #d22; font-weight: 400; }
 .suiLineBox dl dd.recharge { color: #067600; font-weight: 400; }
 .suiLineBox dl dd.rollout { color: #d22; font-weight: 400; }
+.suiLineBox dl dd.suiSelect { position: relative; float: right; width: 60px; height: 30px; margin: 5px 0; border-radius: 35px; background-color: #fff; box-shadow: inset 0 0 5px #aaa; }
+.suiLineBox dl dd.suiSelect:before { position: absolute; background-color: #fff; width: 30px; height: 30px; display: block; top: 0px; left: 0px; content:''; border-radius: 50%; box-shadow: 0 0 5px #ccc; }
+.suiLineBox dl dd.suiSelect[selected=true],.suiLineBox dl dd.suiSelect[selected] { background-color: #00be00; animation: selectedT .5s both; }
+.suiLineBox dl dd.suiSelect[selected=true]:before,.suiLineBox dl dd.suiSelect[selected]:before { left: auto; right: 0px; animation: selectedTB .3s both; }
+.suiLineBox dl dd.suiSelect[selected=false] { background-color: #00be00; animation: selectedF .5s both; }
+.suiLineBox dl dd.suiSelect[selected=false]:before { left: auto; right: 0px; animation: selectedFB .3s both; }
+@keyframes selectedT{
+	from {
+		background-color: #fff;
+	}
+	to{
+		background-color: #00be00;
+	}
+}
+@keyframes selectedTB{
+	from {
+		left: 0;
+	}
+	to{
+		left: calc(100% - 30px);
+	}
+}
+@keyframes selectedF{
+	from {
+		background-color: #00be00;
+	}
+	to{
+		background-color: #fff;
+	}
+}
+@keyframes selectedFB{
+	from {
+		left: calc(100% - 30px);
+	}
+	to{
+		left: 0;
+	}
+}
 /* 通用输入行组件 */
 div.suiLineInput { background-color: #fff; width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
 div.suiLineInput.noTBorder { border-top: none; }

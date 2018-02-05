@@ -220,5 +220,35 @@ var sui = {
 				document.body.removeChild(suiBox);
 			},1000)
 		}
+	},
+	isExist:function(s){
+		if (s.obj) {
+			if (document.querySelector(s.obj)) {
+				s.success(s.obj);
+			}else{
+				console.warn('不存在该元素！');
+			}
+		}
 	}
+};
+
+function suiSelect(global){
+	sui.isExist({
+		obj:".suiSelect",
+		success:function(s){
+			sui.multipleClick({
+				obj:document.querySelectorAll(s),
+				event:function(i,that){
+					if (that.attributes["selected"]) {
+						that.attributes["selected"].nodeValue = ((that.attributes["selected"].nodeValue == "true" || that.attributes["selected"].nodeValue == "")?false:true)
+					}else{
+						that.setAttribute("selected","true")
+					}
+					if (global != undefined || global.length != undefined) {
+						global.change(i,that)
+					}
+				}
+			})
+		}
+	});
 }
