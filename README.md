@@ -8,6 +8,14 @@ Web移动端前端框架
   - \[class\=goto\]链接跳转
 - 框架事件
   - multipleClick 多元素点击事件
+  ```
+  sui.multipleClick({
+  obj:document.querySelectorAll(".class"),
+  event:function(i,that){
+  	// event
+}
+})
+  ```
   - toEnd 触底事件
   ```
   // 基础触低事件 一秒执行一次success函数 防多次触发
