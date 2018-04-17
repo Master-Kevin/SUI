@@ -10,10 +10,10 @@ Web移动端前端框架
   - multipleClick 多元素点击事件
   ```
   sui.multipleClick({
-  obj:document.querySelectorAll(".class"),
-  event:function(i,that){
-  	// event
-  }
+	  obj:document.querySelectorAll(".class"),
+	  event:function(i,that){
+	  	// event
+	  }
   })
   ```
   - toEnd 触底事件
