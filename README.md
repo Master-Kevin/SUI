@@ -13,8 +13,8 @@ Web移动端前端框架
   obj:document.querySelectorAll(".class"),
   event:function(i,that){
   	// event
-}
-})
+  }
+  })
   ```
   - toEnd 触底事件
   ```
