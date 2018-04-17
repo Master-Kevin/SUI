@@ -264,6 +264,9 @@ var sui = {
 	}
 };
 
+/**
+* TODO sui移动端选择器
+**/
 function suiSelect(global){
 	sui.isExist({
 		obj:".suiSelect",
