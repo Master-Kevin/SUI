@@ -55,6 +55,7 @@ var sui = {
 	ajax:function(a){
 		a.method = a.method || 'get';
 		a.ajax = a.ajax || true;
+		a.dataType = a.dataType || 'string'
 		a.error = a.error || function(){
 			console.warn('Ajax请求失败')
 		}

@@ -4,11 +4,28 @@ Web移动端前端框架
 ### 目录
 - Ajax请求
   - Ajax
+  ```
+  sui.ajax({
+  	method:'post', 					// 可选 string 默认为Get
+  	url:'http://www.baidu.com', 	// 必填 string
+  	data:{
+  	  a:1,
+  	  b:1
+    },								// 必填 string|json
+    dataType:'json', 				// 可选 json|string
+    success:function(res){
+	  // event
+    },
+    error:function(err){
+	  // error
+    }
+  })
+  ```
 - 跳转方式
   - \[class\=goto\]链接跳转
   ```
   HTML:
-  	<p class="goto">这是一个链接</p>
+  <p class="goto" href="http://www.baidu.com">巴拉拉能量，跳转百度</p>
   ```
 - 框架事件
   - multipleClick 多元素点击事件
