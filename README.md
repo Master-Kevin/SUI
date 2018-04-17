@@ -12,7 +12,7 @@ Web移动端前端框架
       a:1,
       b:1
     },				// 必填 string|json Ajax请求数据
-    dataType:'json', 		// 可选 json|string
+    dataType:'json', 		// 可选 json|string 默认string
     success:function(res){
 	  // event
     },

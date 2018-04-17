@@ -287,3 +287,6 @@ function suiSelect(global){
 		}
 	});
 }
+/**
+* TODO 创建一个自定义事件
+**/
