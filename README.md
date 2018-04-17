@@ -6,11 +6,11 @@ Web移动端前端框架
   - Ajax
   ```
   sui.ajax({
-  	method:'post', 		// 可选 string 默认为Get
-  	url:'http://www.baidu.com', 	// 必填 string
-  	data:{
-  	  a:1,
-  	  b:1
+    method:'post', 			// 可选 string 默认为Get
+    url:'http://www.baidu.com', 	// 必填 string
+    data:{
+      a:1,
+      b:1
     },					// 必填 string|json
     dataType:'json', 			// 可选 json|string
     success:function(res){
