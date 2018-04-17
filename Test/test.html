@@ -9,12 +9,16 @@
 	
 </body>
 </html>
-<script type="text/javascript" src="../js/sui.js?v"></script>
+<script type="text/javascript" src="../js/sui.js?v=1"></script>
 <script type="text/javascript">
 	sui.ajax({
 		method:'post',
 		url:'http://www.taozihua163.com/wx/index',
-		data:'a=1',
+		data:{
+			a:1,
+			b:3
+		},
+		dataType:'json',
 		success:function(res){
 			console.log(res)
 		}

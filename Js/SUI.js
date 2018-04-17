@@ -44,8 +44,8 @@ var sui = {
 	/* SUI */
 
 	/**
-	* TODO Ajax更新后重新赋予goto类链接能力
-	* TODO Ajax对数组对象做格式化处理
+	* TODO Ajax更新后重新赋予goto类链接能力 17-04-17
+	* TODO Ajax对数组对象做格式化处理 17-04-17
 	* TODO Ajax失败的回调函数 17-04-17
 	**/
 	ajax:function(a){
@@ -65,7 +65,23 @@ var sui = {
 		};
 		ajax.open(a.method, a.url, a.ajax);
 		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		ajax.send(a.data);
+		var data = a.data
+		if (a.dataType == 'json') {
+			var nowData = ""
+			for (var i in data) {
+				nowData += (nowData != ''?'&':'')+i+'='+data[i]
+			}
+			data = nowData
+		}
+		if (a.suiLink) {
+			sui.multipleClick({
+				obj:document.querySelectorAll(".goto"),
+				event:function(i,that){
+					location.href = that.attributes["href"].nodeValue
+				}
+			})
+		}
+		ajax.send(data);
 	},
 	multipleClick:function(a){
 		for (var i = 0; i < a.obj.length; i++) {
