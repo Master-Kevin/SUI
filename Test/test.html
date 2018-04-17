@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 	<meta charset="UTF-8">
 	<title>测试新接口</title>
 	<link rel="stylesheet" href="../css/sui.css">
@@ -23,4 +24,12 @@
 			console.log(res)
 		}
 	})
+	sui.actionSheet({
+	data:["选项一","选项二","选项三"],
+	buttname:'取消', //默认取消
+	timeout:1000, // int 默认1000 组件退出过渡时间
+	success:function(s){
+	  console.log('选择第'+s.index+'个\''+s.data+'\'选项');
+	}
+})
 </script>

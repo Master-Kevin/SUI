@@ -25,8 +25,8 @@ Web移动端前端框架
       cont:'提示内容', //默认为空
       buttname:'确定', //默认为确定
       success:function(){
-      // event
-  }
+        // event
+      }
   })
   ```
   - toast (吐丝提示组件)
@@ -48,7 +48,7 @@ Web移动端前端框架
   	buttname:'取消', //默认取消
   	timeout:1000, // int 默认1000 组件退出过渡时间
   	success:function(s){
-	console.log('选择第'+s.i+'个\''+s.data+'\'选项');
-  }
+	  console.log('选择第'+s.i+'个\''+s.data+'\'选项');
+    }
   })
   ```
