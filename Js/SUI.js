@@ -42,14 +42,25 @@ var goto;
 
 var sui = {
 	/* SUI */
+
+	/**
+	* TODO Ajax更新后重新赋予goto类链接能力
+	* TODO Ajax对数组对象做格式化处理
+	* TODO Ajax失败的回调函数 17-04-17
+	**/
 	ajax:function(a){
 		a.method = a.method || 'get';
 		a.ajax = a.ajax || true;
+		a.error = a.error || function(){
+			console.warn('Ajax请求失败')
+		}
 		var ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				var response = ajax.responseText;
 				a.success(JSON.parse(response));
+			}else if (ajax.readyState == 4 && ajax.status != 200) {
+				a.error(ajax)
 			}
 		};
 		ajax.open(a.method, a.url, a.ajax);
