@@ -6,6 +6,10 @@ Web移动端前端框架
   - Ajax
 - 跳转方式
   - \[class\=goto\]链接跳转
+  ```
+  HTML:
+  	\<\p class="goto">这是一个链接\<\/p>
+  ```
 - 框架事件
   - multipleClick 多元素点击事件
   ```
