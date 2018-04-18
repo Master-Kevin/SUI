@@ -46,6 +46,16 @@ Web移动端前端框架
       }
   })
   ```
+  - multipleEvent (Tap、Longtap)
+  ```
+  sui.multipleEvent({
+    obj:document.querySelectorAll(".class"),
+    type:'tap', // 可选 string 默认click事件 click|tap|longtap,
+    event:function(i,that){
+      // event
+    }
+  })
+  ```
 - UI组件
   - alert (弹窗组件)  
   ```
@@ -79,15 +89,5 @@ Web移动端前端框架
   	success:function(s){
   		console.log('选择第'+s.i+'个\''+s.data+'\'选项');
   	}
-  })
-  ```
-  - multipleEvent (Tap、Longtap)
-  ```
-  sui.multipleEvent({
-    obj:document.querySelectorAll(".class"),
-    type:'tap', // 可选 string 默认click事件 click|tap|longtap,
-    event:function(i,that){
-      // event
-    }
   })
   ```
