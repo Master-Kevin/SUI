@@ -55,34 +55,34 @@ var sui = {
 	ajax:function(a){
 		a.method = a.method || 'get';
 		a.ajax = a.ajax || true;
-		a.dataType = a.dataType || 'string'
+		a.dataType = a.dataType || 'string';
 		a.error = a.error || function(){
-			console.warn('Ajax请求失败')
-		}
+			console.warn('Ajax请求失败');
+		};
 		var ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				var response = ajax.responseText;
 				a.success(JSON.parse(response));
 			}else if (ajax.readyState == 4 && ajax.status != 200) {
-				a.error(ajax)
+				a.error(ajax);
 			}
 		};
 		ajax.open(a.method, a.url, a.ajax);
 		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		var data = a.data
+		var data = a.data;
 		if (a.dataType == 'json') {
-			var nowData = ""
+			var nowData = "";
 			for (var i in data) {
-				nowData += (nowData != ''?'&':'')+i+'='+data[i]
+				nowData += (nowData != ''?'&':'')+i+'='+data[i];
 			}
-			data = nowData
+			data = nowData;
 		}
 		if (a.suiLink) {
 			sui.multipleClick({
 				obj:document.querySelectorAll(".goto"),
 				event:function(i,that){
-					location.href = that.attributes["href"].nodeValue
+					location.href = that.attributes["href"].nodeValue;
 				}
 			})
 		}
@@ -192,7 +192,7 @@ var sui = {
 				li.onclick = function(){
 					info.success({index:i,data:this.innerHTML});
 				}
-			})(i)
+			})(i);
 			ul.appendChild(li);
 		}
 		sheet.appendChild(ul);
@@ -203,7 +203,7 @@ var sui = {
 				setTimeout(function(){
 					document.body.removeChild(suiBox);
 				}, (info.timeout || 1000))
-			}
+			};
 		sheet.appendChild(butt);
 	},
 	toEnd:function(e){
@@ -263,48 +263,51 @@ var sui = {
 		}
 	},
 	multipleEvent:function(s){
-		s.type = s.type || 'click'
+		s.type = s.type || 'click';
 		switch (s.type) {
 			case 'tap':
 				for (var i = 0; i < s.obj.length; i++) {
 					(function(i){
-						var ismove = false
-						var longtime = false
+						var ismove = false;
+						var longtime = false;
 						s.obj[i].addEventListener("touchstart",function(e){
 							setTimeout(function(){
-								longtime = true
+								longtime = true;
 							},800)
-						})
+						});
 						s.obj[i].addEventListener("touchmove",function(e){
-							ismove = true
-						})
+							ismove = true;
+						});
 						s.obj[i].addEventListener("touchend",function(e){
 							if (!ismove && !longtime) {
-								s.event(i,this,e)
+								s.event(i,this,e);
 							}
-							ismove = false
-							longtime = false
-						})
+							ismove = false;
+							longtime = false;
+						});
 					})(i)
 				}
 				break;
 			case 'longtap':
 				for (var i = 0; i < s.obj.length; i++) {
 					(function(i){
-						var ismove = false
+						var ismove = false;
+						var touchend = false;
 						s.obj[i].addEventListener("touchstart",function(e){
+							touchend = false;
 							setTimeout(function(){
-								if (!ismove) {
+								if (!ismove && !touchend) {
 									s.event(i,this,e)
 								}
 							},800)
-						})
+						});
 						s.obj[i].addEventListener("touchmove",function(e){
-							ismove = true
-						})
+							ismove = true;
+						});
 						s.obj[i].addEventListener("touchend",function(e){
-							ismove = false
-						})
+							ismove = false;
+							touchend = true;
+						});
 					})(i)
 				}
 				break;
