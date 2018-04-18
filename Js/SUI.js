@@ -261,6 +261,61 @@ var sui = {
 				console.warn('不存在该元素！');
 			}
 		}
+	},
+	multipleEvent:function(s){
+		s.type = s.type || 'click'
+		switch (s.type) {
+			case 'tap':
+				for (var i = 0; i < s.obj.length; i++) {
+					(function(i){
+						var ismove = false
+						var longtime = false
+						s.obj[i].addEventListener("touchstart",function(e){
+							setTimeout(function(){
+								longtime = true
+							},800)
+						})
+						s.obj[i].addEventListener("touchmove",function(e){
+							ismove = true
+						})
+						s.obj[i].addEventListener("touchend",function(e){
+							if (!ismove && !longtime) {
+								s.event(i,this,e)
+							}
+							ismove = false
+							longtime = false
+						})
+					})(i)
+				}
+				break;
+			case 'longtap':
+				for (var i = 0; i < s.obj.length; i++) {
+					(function(i){
+						var ismove = false
+						s.obj[i].addEventListener("touchstart",function(e){
+							setTimeout(function(){
+								if (!ismove) {
+									s.event(i,this,e)
+								}
+							},800)
+						})
+						s.obj[i].addEventListener("touchmove",function(e){
+							ismove = true
+						})
+						s.obj[i].addEventListener("touchend",function(e){
+							ismove = false
+						})
+					})(i)
+				}
+				break;
+			default:
+				for (var i = 0; i < s.obj.length; i++) {
+					(function(i){
+						s.obj[i].onclick = function(e){s.event(i,this,e)}
+					})(i)
+				}
+			break;
+		}
 	}
 };
 
