@@ -83,6 +83,7 @@ dl.suiHead dd { float: right;  }
 .suiLineBox.notop { margin-top: 0; }
 .suiLineBox dl { height: 40px; line-height: 40px; border-bottom: 1px solid #f3f3f3; padding-right: 15px; }
 .suiLineBox dl>img { height: 23px; width: 23px; float: left; margin: 8.5px 0; margin-right: 8px; }
+.suiLineBox dl>i { float: left; margin-right: 5px; font-size: 13pt; }
 .suiLineBox dl:last-child { border-bottom: none; }
 .suiLineBox dl dt { font-size: 11pt; float: left; }
 .suiLineBox.strong dl dt { font-size: 11pt; font-weight: 400; float: left; }
