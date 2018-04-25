@@ -24,7 +24,7 @@ Web移动端前端框架
 - 跳转方式
   - \[class\=goto\]链接跳转
   ```
-  HTML:
+  HTML: (巴拉拉能量遭到黑暗能量袭击，出了点问题，修复中...)
   <p class="goto" href="http://www.baidu.com">巴拉拉能量，跳转百度</p>
   ```
 - 框架事件
