@@ -17,9 +17,9 @@ var goto;
 		sui.simpleErgodic({
 			object:doc.getElementsByClassName('goto'),
 			type:'onclick',
-			event:function(e,i){
+			event:function(e,i,that){
 				if (this.object[i].attributes["href"]) {
-					location.href = this.object[i].attributes["href"].nodeValue;
+					location.href = that.attributes["href"].nodeValue;
 				}else {
 					console.warn('警告：该元素未指定地址属性 => href\nWarn: This element not have href attributes\n\nTip:意思就是有个傻逼程序员忘了添加链接地址！！');
 				}
@@ -33,7 +33,7 @@ var goto;
 				case 'onclick':
 					(function(i){
 						a.object[i].onclick = function(e){
-							a.event(e,i);
+							a.event(e,i,this);
 						}
 					})(i);
 					break;
