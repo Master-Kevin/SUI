@@ -357,3 +357,25 @@ function suiSelect(global){
 /**
 * TODO 创建一个自定义事件
 **/
+
+// 序列化表单
+function format(query,type){		
+	type = type || 'string';
+	query = query || 'body';
+	var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]"),
+		result = type == 'json'?{}:'',
+		addString = function(k,v){
+			result += (result==''?'':'&')+k+"="+(v?v:'')
+		},
+		addJson = function(k,v){
+			result[k] = (v?v:'');
+		};
+	for (var i = 0; i < inputEle.length; i++) {
+		switch (inputEle[i].type) {
+			case "text": case 'number': case 'hidden': case 'textarea': case 'select-one': type == 'json'?addJson(inputEle[i].name,inputEle[i].value):addString(inputEle[i].name,inputEle[i].value); break;
+			case "radio": inputEle[i].checked?(type == 'json'?addJson(inputEle[i].name,inputEle[i].value):addString(inputEle[i].name,inputEle[i].value)):(type == 'json'?addJson(inputEle[i].name,'0'):addString(inputEle[i].name,'0')); break;
+			default: break;
+		}
+	}
+	return result;
+}
