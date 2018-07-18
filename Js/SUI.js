@@ -359,10 +359,11 @@ function suiSelect(global){
 **/
 
 // 序列化表单
+// iE的命名未缺省，出问题终点排查。
 function format(query,type){		
 	type = type || 'string';
 	query = query || 'body';
-	var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]"),
+	var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]"),iE,
 		result = type == 'json'?{}:'',
 		addString = function(k,v){
 			result += (result==''?'':'&')+k+"="+(v?v:'');
@@ -371,11 +372,20 @@ function format(query,type){
 			result[k] = (v?v:'');
 		};
 	for (var i = 0; i < inputEle.length; i++) {
-		switch (inputEle[i].type) {
-			case "text": case 'number': case 'hidden': case 'textarea': case 'select-one': type == 'json'?addJson(inputEle[i].name,inputEle[i].value):addString(inputEle[i].name,inputEle[i].value); break;
-			case "radio": inputEle[i].checked?(type == 'json'?addJson(inputEle[i].name,inputEle[i].value):addString(inputEle[i].name,inputEle[i].value)):(type == 'json'?addJson(inputEle[i].name,'0'):addString(inputEle[i].name,'0')); break;
+		switch ((iE = inputEle[i]).type) {
+			case "text": case 'number': case 'hidden': case 'textarea': case 'select-one': type == 'json'?addJson(iE.name,iE.value):addString(iE.name,iE.value); break;
+			case "radio": iE.checked?(type == 'json'?addJson(iE.name,iE.value):addString(iE.name,iE.value)):(type == 'json'?addJson(iE.name,'0'):addString(iE.name,'0')); break;
 			default: break;
 		}
 	}
 	return result;
+}
+
+// 获取参数
+var allParam = location.href.split("?")[1],hrefParam = {}
+if (allParam) {
+    // console.log(allParam.split("&").length)
+    for (var i = 0; i < allParam.split("&").length; i++) {
+        hrefParam[allParam.split("&")[i].split("=")[0]] = decodeURI(allParam.split("&")[i].split("=")[1])
+    }
 }
