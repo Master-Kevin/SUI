@@ -365,7 +365,7 @@ function format(query,type){
 	var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]"),
 		result = type == 'json'?{}:'',
 		addString = function(k,v){
-			result += (result==''?'':'&')+k+"="+(v?v:'')
+			result += (result==''?'':'&')+k+"="+(v?v:'');
 		},
 		addJson = function(k,v){
 			result[k] = (v?v:'');
