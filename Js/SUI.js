@@ -64,12 +64,18 @@ var sui = {
 			if (ajax.readyState == 4 && ajax.status == 200) {
 				var response = ajax.responseText;
 				a.success(JSON.parse(response));
+				if (a.suiLink) {
+					sui.multipleClick({
+						obj:document.querySelectorAll(".goto"),
+						event:function(i,that){
+							location.href = that.attributes["href"].nodeValue;
+						}
+					})
+				}
 			}else if (ajax.readyState == 4 && ajax.status != 200) {
 				a.error(ajax);
 			}
 		};
-		ajax.open(a.method, a.url, a.ajax);
-		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		var data = a.data;
 		if (a.dataType == 'json') {
 			var nowData = "";
@@ -78,13 +84,16 @@ var sui = {
 			}
 			data = nowData;
 		}
-		if (a.suiLink) {
-			sui.multipleClick({
-				obj:document.querySelectorAll(".goto"),
-				event:function(i,that){
-					location.href = that.attributes["href"].nodeValue;
-				}
-			})
+		ajax.open(a.method, a.url, a.ajax);
+		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		/**
+			适应beego => IsAjax() 检测
+		**/
+		ajax.setRequestHeader("X-Requested-With","XMLHttpRequest");
+		if (a.requestHeader) {
+			for (var i in a.requestHeader) {
+				ajax.setRequestHeader(i,a.requestHeader[i])
+			}
 		}
 		ajax.send(data);
 	},
