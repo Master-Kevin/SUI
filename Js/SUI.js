@@ -363,7 +363,13 @@ function suiSelect(global){
 function format(query,type){		
 	type = type || 'string';
 	query = query || 'body';
-	var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]"),iE,
+	queryType = typeof query
+	if (queryType == "object") {
+		var inputEle = query.querySelectorAll("input[name],select[name],textarea[name]");
+	}else if(queryType == "string"){
+		var inputEle = document.querySelectorAll(query+" input[name],"+query+" select[name],"+query+" textarea[name]");
+	}
+	var iE,
 		result = type == 'json'?{}:'',
 		addString = function(k,v){
 			result += (result==''?'':'&')+k+"="+(v?v:'');
